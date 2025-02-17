@@ -20,6 +20,10 @@ i18next
                         more: {
                             title: "更多工具",
                             description: "敬请期待..."
+                        },
+                        videoToAudio: {
+                            title: "视频提取音频",
+                            description: "从视频文件中提取音频，支持多种格式"
                         }
                     },
                     common: {
@@ -43,6 +47,10 @@ i18next
                         more: {
                             title: "More Tools",
                             description: "Coming soon..."
+                        },
+                        videoToAudio: {
+                            title: "Video to Audio",
+                            description: "Extract audio from video files, supports multiple formats"
                         }
                     },
                     common: {
@@ -66,6 +74,10 @@ i18next
                         more: {
                             title: "その他のツール",
                             description: "近日公開..."
+                        },
+                        videoToAudio: {
+                            title: "動画から音声抽出",
+                            description: "動画ファイルから音声を抽出、複数のフォーマットに対応"
                         }
                     },
                     common: {
