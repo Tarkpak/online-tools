@@ -102,4 +102,166 @@ footer a:hover {
         grid-template-columns: 1fr;
         padding: 20px 0;
     }
+}
+
+/* 添加新的动画和视觉效果样式 */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: relative;
+}
+
+.glowing-text {
+    font-size: 3.5em;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.3em;
+    margin-top: 1em;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
+}
+
+/* 鼠标滚动提示动画 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scroll 1.5s infinite;
+}
+
+/* 工具卡片样式优化 */
+.tool-card {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.tool-card:hover::before {
+    transform: translateX(100%);
+}
+
+.tool-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-svg {
+    width: 40px;
+    height: 40px;
+    fill: #4CAF50;
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover .icon-svg {
+    transform: scale(1.1);
+}
+
+.card-action {
+    display: inline-block;
+    margin-top: 15px;
+    color: #4CAF50;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover .card-action {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.coming-soon {
+    opacity: 0.7;
+    cursor: default;
+}
+
+/* 动画关键帧 */
+@keyframes gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255,255,255,0.8) }
+    to { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6) }
+}
+
+@keyframes scroll {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    .glowing-text {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
 } 

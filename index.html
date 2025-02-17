@@ -5,30 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在线工具集 - Online Tools</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- 添加动画库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
-    <header>
+    <header class="hero">
         <div class="container">
-            <h1>在线工具集</h1>
-            <p>纯前端实现的实用工具集合，无需后端服务</p>
+            <h1 class="glowing-text">在线工具集</h1>
+            <p class="subtitle">纯前端实现的实用工具集合，无需后端服务</p>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow"></div>
+            </div>
         </div>
     </header>
 
     <main class="container">
         <div class="tools-grid">
-            <a href="tools/image-to-line-art" class="tool-card">
-                <div class="tool-icon">🎨</div>
+            <a href="tools/image-to-line-art" class="tool-card" data-aos="fade-up">
+                <div class="tool-icon">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/>
+                    </svg>
+                </div>
                 <h2>图片转线稿</h2>
                 <p>将图片转换为线稿风格，支持实时预览和参数调节</p>
+                <span class="card-action">开始使用 →</span>
             </a>
-            <!-- 后续添加更多工具卡片 -->
+            <!-- 为后续工具预留位置 -->
+            <div class="tool-card coming-soon" data-aos="fade-up" data-aos-delay="100">
+                <div class="tool-icon">✨</div>
+                <h2>更多工具</h2>
+                <p>敬请期待...</p>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Online Tools. 在 <a href="https://github.com/yourusername/online-tools">GitHub</a> 上查看源码</p>
+            <p>© 2025 Online Tools. 在 <a href="https://github.com/tarkpak/online-tools">GitHub</a> 上查看源码</p>
         </div>
     </footer>
+
+    <!-- 添加动画脚本 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
 </body>
 </html>
