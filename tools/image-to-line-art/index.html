@@ -242,9 +242,54 @@
             background: #fff;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
+
+        /* 返回主页按钮样式 */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-button::before {
+            content: "←";
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-home {
+                top: 10px;
+                left: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="back-to-home">
+        <a href="/" class="back-button" data-i18n="common.backToHome">返回主页</a>
+    </div>
+
     <div class="language-switcher">
         <select id="languageSelect" onchange="changeLanguage(this.value)">
             <option value="zh">中文</option>
@@ -299,6 +344,9 @@
                                 drag: "拖动滑块查看原图与线稿对比",
                                 adjust: "调整参数以获得最佳效果"
                             }
+                        },
+                        common: {
+                            backToHome: "返回主页"
                         }
                     }
                 },
@@ -315,6 +363,9 @@
                                 drag: "Drag slider to compare original and line art",
                                 adjust: "Adjust parameters for best results"
                             }
+                        },
+                        common: {
+                            backToHome: "Back to Home"
                         }
                     }
                 },
@@ -331,6 +382,9 @@
                                 drag: "スライダーで元画像と線画を比較",
                                 adjust: "パラメータを調整して最適な結果を得る"
                             }
+                        },
+                        common: {
+                            backToHome: "ホームに戻る"
                         }
                     }
                 }
